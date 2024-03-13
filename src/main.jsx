@@ -2,7 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import "./main.css"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import CONTACT from './Contact.jsx'
+import Pagina404 from './404.jsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<App />}/>
+            <Route path="/contact" element={<CONTACT />}/>
+            <Route path='*' element={<Pagina404/>}/>
+        </Routes>
+    </BrowserRouter>
 )
