@@ -1,4 +1,4 @@
-import "../Cripto.css"
+import "./Cripto.css"
 
 const Cripto = ({name, priceUsd, symbol, changePercent24Hr}) => {
 
