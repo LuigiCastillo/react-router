@@ -1,19 +1,11 @@
-body {
-    background-color: #5DADE2;
+.app-container {
+    max-width: 1400px;
+    padding: 2rem 0;
+    margin: auto;
 }
 
-h1 {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.Card {
-    background-color: #117A65;
-    border: 2px black solid;
-    margin: 1em;
-    display: inline-block;
-    width: 250px;
-    height: 80px;
-    padding: 1em;
-    border-radius: 1em;
+.cripto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
 }
