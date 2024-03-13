@@ -1,7 +1,11 @@
+import "./404.css"
+
 const Pagina404 = () => (
     <>
-        <h1>Pagina no encontrada</h1>
-        <span>La pagina solicitada no existe</span>
+        <div className="notfound">
+            <h1>404</h1>
+            <span>La pagina solicitada no existe</span>
+        </div>
     </>
 )
 
