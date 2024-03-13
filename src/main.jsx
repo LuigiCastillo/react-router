@@ -10,8 +10,8 @@ import Menu from './componentes/menu/Menu.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <>
-        <Menu />
         <BrowserRouter>
+        <Menu />
             <Routes>
                 <Route path="/" element={<App />}/>
                 <Route path="/contact" element={<CONTACT />}/>
