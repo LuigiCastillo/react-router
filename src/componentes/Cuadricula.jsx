@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import "./Cuadricula.css"
-import Cripto from "./Cripto"
+import Cripto from "./Cripto/Cripto"
 
 
 
@@ -28,7 +28,13 @@ function Cuadricula() {
       <div className="cripto-container">
         {
           criptos.map(({id, name, priceUsd, symbol, changePercent24Hr}) => (
-            <Cripto key={id} name={name} priceUsd={priceUsd} symbol={symbol} changePercent24Hr={changePercent24Hr}/>
+            <Cripto 
+              key={id} 
+              name={name} 
+              priceUsd={priceUsd} 
+              symbol={symbol} 
+              changePercent24Hr={changePercent24Hr}
+              id={id}/>
           ))
         }
       </div>
