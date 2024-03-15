@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
 import "./Cuadricula.css"
 import Cripto from "./Cripto/Cripto"
-
-
+import usePetition from "../hooks/usePetition"
 
 function Cuadricula() {
 
-  const API_URL = import.meta.env.VITE_API_URL
-  const [criptos, setCriptos] = useState()
-
-  useEffect( () => {
-      axios.get(`${API_URL}assets`)
-      .then((data) => {
-        setCriptos(data.data.data)
-      })
-      .catch(() => {
-        console.error("La peticion fallo")
-      })
-    }, [])
+  const criptos = usePetition(`assets`)
   
     if (!criptos) return <span>Cargando...</span>
 
