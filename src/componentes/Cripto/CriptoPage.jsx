@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { useParams } from "react-router-dom"
-import { key } from "localforage"
+import "./CriptoPage.css"
+import dayjs from "dayjs"
 
 const CriptoPage = () => {
 
@@ -9,6 +10,7 @@ const CriptoPage = () => {
     const API_URL = import.meta.env.VITE_API_URL
     const [criptos, setCriptos] = useState()
     const [history, setHistory] = useState([])
+
 
 
     useEffect( () => {
@@ -91,7 +93,7 @@ const CriptoPage = () => {
                     {
                         history.map(({ date, priceUsd, time}) => (
                             <tr key={time}>
-                                <td>{date}</td>
+                                <td>{dayjs(date).format(`DD/MM/YYYY`)}</td>
                                 <td>{parseFloat(priceUsd).toFixed(4)}</td>
                             </tr>
                         ))

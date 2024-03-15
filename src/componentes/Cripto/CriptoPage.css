@@ -1,0 +1,16 @@
+table {
+    width: 25%;
+    /* border: 1px solid white; */
+    border-collapse: collapse;
+    margin-left: 5em;
+
+}
+
+th {
+    background-color: rgb(38, 115, 40);
+}
+
+th, td {
+    border: 1px solid white;
+    vertical-align: top;
+}
