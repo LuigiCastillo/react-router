@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { Navigate, useNavigate } from "react-router-dom"
+import "./Login.css"
 
 const Login = () => {
 
@@ -26,8 +27,8 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1>Iniciar sesión</h1>
-            <form onSubmit={submit}>
+            <h1 className="title">Iniciar sesión</h1>
+            <form onSubmit={submit} className="form-container">
                 <div className="field">
                     <label htmlFor="email">Correo Electrónico</label>
                     <input required onChange={(e) => {
@@ -47,7 +48,7 @@ const Login = () => {
                     }} type="password" name="password"/>
                 </div>
                 <div className="submit">
-                    <input type="submit" value="Ingresar" />
+                    <input className="ingresar" type="submit" value="Ingresar" />
                 </div>
             </form>
         </div>
