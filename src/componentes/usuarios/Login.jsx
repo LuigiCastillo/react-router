@@ -1,7 +1,10 @@
 import axios from "axios"
 import { useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom"
 
 const Login = () => {
+
+    const navigation = useNavigate()
 
     // Manejo de campos de formulario con useState
     const [user, setUser] = useState ({
@@ -14,11 +17,12 @@ const Login = () => {
         axios.post(`https://reqres.in/api/login`, user)
         .then(data => {
             localStorage.setItem("tokenEDmarket", data.data.token)
+            navigation("/")
         })
         .catch(e => console.error(e))
     }
 
-
+    if ( localStorage.getItem("tokenEDmarket")) return <Navigate to="/"/>
 
     return (
         <div className="login-container">
