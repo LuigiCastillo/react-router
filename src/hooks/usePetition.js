@@ -5,18 +5,23 @@ const usePetition = (endpoint) => {
 
     const API_URL = import.meta.env.VITE_API_URL
     const [data, setData] = useState()
+    const [cargando, setCargando] = useState(false)
 
     useEffect( () => {
-        axios.get(`${API_URL}${endpoint}`)
-        .then((data) => {
-          setData(data.data.data)
-        })
-        .catch(() => {
-          console.error("La peticion fallo")
-        })
+      setCargando(true)
+
+      axios.get(`${API_URL}${endpoint}`)
+      .then((data) => {
+        setData(data.data.data)
+        setCargando(false)
+      })
+      .catch(() => {
+        setCargando(false)
+        console.error("La peticion fallo")
+      })
     }, [])
 
-    return data
+    return [data, cargando]
 }
 
 export default usePetition

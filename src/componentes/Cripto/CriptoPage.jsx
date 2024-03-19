@@ -7,10 +7,12 @@ import History from "./info/CriptoHistory"
 const CriptoPage = () => {
 
     const params = useParams()
-    const criptos = usePetition(`assets/${params.id}`)
-    const history = usePetition(`assets/${params.id}/history?interval=d1`)
+    const [criptos, cargandoCripto] = usePetition(`assets/${params.id}`)
+    const [history, cargandoHistory] = usePetition(`assets/${params.id}/history?interval=d1`)
 
-    if (!criptos) return <span>Cargando...</span>
+    if (cargandoCripto || cargandoHistory) return <span>Cargando...</span>
+
+    // if (!criptos) return <span>Cargando...</span>
 
     return (
         <>
