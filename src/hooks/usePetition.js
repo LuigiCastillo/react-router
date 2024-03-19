@@ -15,9 +15,9 @@ const usePetition = (endpoint) => {
         setData(data.data.data)
         setCargando(false)
       })
-      .catch(() => {
+      .catch((e) => {
         setCargando(false)
-        console.error("La peticion fallo")
+        console.error(e)
       })
     }, [])
 

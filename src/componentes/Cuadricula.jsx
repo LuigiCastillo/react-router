@@ -2,9 +2,9 @@ import "./Cuadricula.css"
 import Cripto from "./Cripto/Cripto"
 import usePetition from "../hooks/usePetition"
 
-function Cuadricula() {
+const Cuadricula = () => {
 
-  const criptos = usePetition(`assets`)
+  const [criptos] = usePetition(`assets`)
   
     if (!criptos) return <span>Cargando...</span>
 
