@@ -13,14 +13,23 @@ const Login = () => {
         password: ""
     })
 
+    const [ cargando, setCargando] = useState(false)
+    const [ error, setError] = useState()
+
     const submit = (e) => {
+        setCargando(true)
         e.preventDefault()
         axios.post(`https://reqres.in/api/login`, user)
         .then(data => {
+            setCargando(false)
             localStorage.setItem("tokenEDmarket", data.data.token)
             navigation("/")
         })
-        .catch(e => console.error(e))
+        .catch(e => {
+            setCargando(false)
+            console.error(e)
+            setError(e.response.data.error)
+        })
     }
 
     if ( localStorage.getItem("tokenEDmarket")) return <Navigate to="/"/>
@@ -48,9 +57,16 @@ const Login = () => {
                     }} type="password" name="password"/>
                 </div>
                 <div className="submit">
-                    <input className="ingresar" type="submit" value="Ingresar" />
+                    <input 
+                    className="ingresar" 
+                    type="submit" 
+                    value={cargando ? "cargando..." : "Ingresar"} 
+                />
                 </div>
             </form>
+            {
+                error && <span className="error">{error}</span>
+            }
         </div>
     )
 }

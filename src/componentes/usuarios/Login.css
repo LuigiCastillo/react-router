@@ -1,25 +1,35 @@
 .login-container {
-    text-align: center;
-    margin: 5rem;
-}
-
-.form-container {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 1rem;
+    background-color: rgb(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
     padding: 2rem;
+    transition: all .25s;
+    text-align: center;
 }
 
 .field {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-.title {
-    margin-bottom: 5rem;
-    font-size: 3rem;
+.field label {
+    margin-right: 1rem;
+    line-height: 2;
 }
 
-.ingresar {
-    background: rgb(119, 183, 183);
-    text-decoration: none;
-    color: darkblue;
-    padding: 1rem;
-    border-radius: 8px;
+.field input {
+    background: none;
+    border: 1px solid gray;
+    padding: .5rem;
+    border-radius: .75rem;
+    width: 100%;
+    color: white;
+}
+
+.error {
+    background-color: tomato;
+    line-height: 3;
+    padding: .35rem;
 }
