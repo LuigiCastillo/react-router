@@ -15,14 +15,10 @@ const CriptoPage = () => {
     // if (!criptos) return <span>Cargando...</span>
 
     return (
-        <>
-            <div className="cripto-page-container">
-                {criptos && <CriptoInfo criptos={criptos}/>}
-                <div className="history">
-                {history && <History history={history}/>}
-                </div>
-            </div>
-        </>
+        <div className="cripto-page-container">
+            {criptos && <CriptoInfo criptos={criptos}/>}
+            {history && <History history={history}/>}
+        </div>
     )
 }
 
